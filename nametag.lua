@@ -619,6 +619,19 @@ local function main()
                 end
             end
 
+            local Cursor = create("TextLabel", {
+                Position = UDim2.new(0, 0, 0, 5),
+                Size = UDim2.new(0, 0, 0, 12),
+                AutomaticSize = Enum.AutomaticSize.X,
+                BackgroundTransparency = 1,
+                Font = NAME_FONT,
+                TextSize = NAME_SIZE,
+                TextColor3 = THEME.Primary,
+                Text = "|",
+                TextTransparency = 1,
+                ZIndex = 4,
+            }, Content)
+
             local function setExpanded(state)
                 if expanded == state then return end
                 expanded = state
@@ -650,19 +663,6 @@ local function main()
             TweenService:Create(Root, TweenInfo.new(0.4, Enum.EasingStyle.Quart), { BackgroundTransparency = 0.30 }):Play()
             TweenService:Create(Stroke, TweenInfo.new(0.4), { Transparency = 0.42 }):Play()
             LogoScale.Scale = 1
-
-            local Cursor = create("TextLabel", {
-                Position = UDim2.new(0, 0, 0, 5),
-                Size = UDim2.new(0, 0, 0, 12),
-                AutomaticSize = Enum.AutomaticSize.X,
-                BackgroundTransparency = 1,
-                Font = NAME_FONT,
-                TextSize = NAME_SIZE,
-                TextColor3 = THEME.Primary,
-                Text = "|",
-                TextTransparency = 1,
-                ZIndex = 4,
-            }, Content)
 
             task.spawn(function()
                 while Billboard.Parent do
